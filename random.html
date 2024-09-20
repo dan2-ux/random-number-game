@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Number Guessing Game</h1>
+    <label for="enterednumber">Enter your Number</label><br><br>
+    <input id="enterednumber" >
+    <br><br>
+    <button id="submit">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        let answer = Math.floor(Math.random() * 10 +1)
+        console.log(answer)
+        document.getElementById("submit").onclick = function(){
+            let value = document.getElementById("enterednumber").value
+            if(Number(value)){
+                if(value == answer){
+                    document.getElementById("result").textContent = "W"
+                }
+                else {
+                    document.getElementById("result").textContent = "L"
+                }
+            }
+            else{
+                document.getElementById("result").textContent = "Please Enter a Number"
+            }
+        }
+    </script>
+</body>
+</html>
